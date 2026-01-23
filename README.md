@@ -18,3 +18,9 @@ git add .
 git status
 git commit -m ".gitignore: add .bak and .sqlite3"
 git push origin update_gitignore
+
+Helpful MANAGE.PY commands:
+python3 manage.py startapp articles
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
