@@ -1,23 +1,39 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block head %}
+{% block title %}
     <title>{{ article.title }}</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
 {% endblock %}
 
 {% block body %}
+    <div class="row my-5 px-md-5 px-3">
 
-    <img class="cover-image" src="{{ article.cover_image.url }}">
+        <div class="col-md text-center px-5 my-5">
+            <h1 class="title display-1">{{ article.title }}</h1>
+            <p>
+            <a class="author hyper fw-bolder" href="{{ article.author_url }}" target="_blank"><i class="fa-solid fa-link small"></i> {{ article.author }}</a>
+            <span class="publication-date small">&#183; {{ article.publication_date }}</span>
+            </p>
+        </div>
+        <div class="col-md">
+            <img class="img-fluid cover-image" src="{{ article.cover_image.url }}">
+        </div>
 
-    <h1 class="title hyper">{{ article.title }}</h1>
+    </div>
 
-    <p>
-        By <a class="author" href="{{ article.author_url }}">{{ article.author }}</a>
-        &#8212; {{ article.publication_date }}
-    </p>
+   <div class="row">
+       <div class="col-lg-1">
+       </div>
+       <div class="col-lg-8 content p-sm-4 my-5">
+           {{ article.content|safe }}
+       </div>
+       <div class="col-lg-3">
 
-    <p>
-        {{ article.content }}
-    </p>
+       </div>
+    </div>
+
 {% endblock %}
