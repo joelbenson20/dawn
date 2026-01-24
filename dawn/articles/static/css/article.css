@@ -6,19 +6,31 @@
     text-shadow: 1px 1px #ff00ff, -1px -1px #3cdfff;
 }
 
+.section,
 .title,
 .publication-date,
+.cover-image-credit,
 .content {
     font-family: goudy-old-style, garamond, "Times New Roman", serif;
 }
 
+.author {
+    text-decoration: none;
+}
+
+.section {
+    font-size: 20px;
+}
 
 .content {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 400;
 }
 
 @media only screen and (max-width: 992px) {
+    .section {
+        font-size: 16px;
+    }
     .content {
         font-size: 20px;
     }

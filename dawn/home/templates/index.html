@@ -10,6 +10,7 @@
 
         {% for article in articles %}
             <div class="post row border border-bottom-0 border-light border-opacity-25 p-3">
+                <p class="post-section">[ {{ article.get_section_display }} ]</p>
                 <h1><a class="post-title hyper" href="{{ article.get_absolute_url }}">{{ article.title }}</a></h1>
                 <p>
                     <span class="post-author fw-bolder">{{ article.author }}   </span>
@@ -17,9 +18,11 @@
                     <span class="post-publication-date small">&#183; {{ article.publication_date }}</span>
                 </p>
                 <p class="post-content">
-                    {{ article.content|slice:":280" }}...
+                    {{ article.snippet|safe }}
                 </p>
-                <img class="img-fluid post-image rounded border border-light border-opacity-25 p-0" src="{{ article.cover_image.url }}">
+                {% if article.cover_image %}
+                    <img class="img-fluid post-image rounded border border-light border-opacity-25 p-0" src="{{ article.cover_image.url }}">
+                {% endif %}
             </div>
         {% endfor %}
 

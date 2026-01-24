@@ -15,10 +15,14 @@
 .hyper:visited {
     text-shadow: 1px 1px #ff00ff, -1px -1px #3cdfff;
     color: white;
-    text-decoration: none;
+    /*text-decoration: none;*/
 }
 
 .hyper:active {
     text-shadow: -1px -1px #ff00ff, 1px 1px #3cdfff;
     color:white;
+}
+
+h1 .hyper {
+    text-decoration: none;
 }

@@ -1,3 +1,7 @@
 .feed {
     max-width: 576px;
 }
+
+.post-content > * > .hyper {
+    text-decoration: underline !important;
+}

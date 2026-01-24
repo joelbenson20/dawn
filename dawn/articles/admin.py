@@ -12,11 +12,12 @@ class ArticleAdmin(admin.ModelAdmin):
 
     list_filter = (
         'published',
+        'section',
     )
 
     fieldsets = (
         (None, {
-            'fields': ('title',),
+            'fields': ('title', 'snippet', 'section', 'keywords',),
         }),
         ('Author Information', {
             'fields': ('author', 'author_email', 'author_url'),
@@ -25,7 +26,7 @@ class ArticleAdmin(admin.ModelAdmin):
             'fields': ('cover_image', 'cover_image_credit'),
         }),
         ('Content', {
-            'fields': ('content', 'keywords'),
+            'fields': ('content',),
         }),
         ('Publication', {
             'fields': ('publication_date', 'published'),

@@ -13,6 +13,7 @@
     <div class="row my-5 px-md-5 px-3">
 
         <div class="col-md text-center px-5 my-5">
+            <p class="section">[ {{ article.get_section_display }} ]</p>
             <h1 class="title display-1">{{ article.title }}</h1>
             <p>
                 <a class="author hyper fw-bolder" href="{{ article.author_url }}" target="_blank"><i class="fa-solid fa-link small"></i> {{ article.author }}</a>
@@ -20,7 +21,10 @@
             </p>
         </div>
         <div class="col-md">
-            <img class="img-fluid cover-image" src="{{ article.cover_image.url }}">
+            {% if article.cover_image %}
+                <img class="img-fluid cover-image mb-3" src="{{ article.cover_image.url }}">
+                <p class="cover-image-credit">{{ article.cover_image_credit }}</p>
+            {% endif %}
         </div>
 
     </div>
@@ -29,7 +33,7 @@
        <div class="col-lg-1">
        </div>
        <div class="col-lg-8 content p-sm-4 my-5">
-           {{ article.content|safe }}
+           <p>{{ article.content|safe }}</p>
            <p class="text-end"><a class="hyper" href="#"><i class="fa-solid fa-square"></i></a></p>
        </div>
        <div class="col-lg-3">
