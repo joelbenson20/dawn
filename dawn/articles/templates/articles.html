@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <h1>#Dawn Articles</h1>
-    {% for article in articles %}
-        <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
-    {% endfor %}
-{% endblock %}

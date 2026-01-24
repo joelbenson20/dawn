@@ -1,7 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block content %}
-    <h1>#Dawn Article:</h1>
+{% block head %}
+    <title>{{ article.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+
+{% block body %}
+
+    <img class="cover-image" src="{{ article.cover_image.url }}">
+
+    <h1 class="title hyper">{{ article.title }}</h1>
+
+    <p>
+        By <a class="author" href="{{ article.author_url }}">{{ article.author }}</a>
+        &#8212; {{ article.publication_date }}
+    </p>
+
     <p>
         {{ article.content }}
     </p>

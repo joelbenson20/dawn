@@ -1,5 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block content %}
-    <h1>Feed</h1>
+{% block body %}
+    <h1 class="hyper">#Dawn</h1>
+    {% for article in articles %}
+        <div>
+            <img src="{{ article.cover_image.url }}">
+            <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+            <p>By
+                {{ article.author }}
+                {{ article.publication_date }}
+            </p>
+        </div>
+    {% endfor %}
 {% endblock %}
