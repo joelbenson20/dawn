@@ -1,7 +1,13 @@
-.container-fluid {
-    background: #040000;
+#window-container {
+    background: black;
     filter: contrast(88%);
     color: white;
+}
+
+.navbar-brand,
+.nav-item,
+.nav-link {
+    font-family: goudy-old-style, garamond, "Times New Roman", serif;
 }
 
 .hyper,

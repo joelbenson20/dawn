@@ -6,20 +6,20 @@
 {% endblock %}
 
 {% block body %}
-    <div class="feed col mx-auto p-0">
+    <div class="feed col mx-auto">
 
         {% for article in articles %}
-            <div class="post row border border-light border-opacity-25 p-2">
+            <div class="post row border border-bottom-0 border-light border-opacity-25 p-3">
                 <h1><a class="post-title hyper" href="{{ article.get_absolute_url }}">{{ article.title }}</a></h1>
                 <p>
                     <span class="post-author fw-bolder">{{ article.author }}   </span>
-                    <a class="post-author-url hyper small" href="{{ article.author_url }}" target="_blank"><i class="fa-solid fa-link"></i>{{ article.author_url }}</a>
+                    <a class="post-author-url hyper small" href="{{ article.author_url }}" target="_blank"><i class="fa-solid fa-link"></i> {{ article.author_url }}</a>
                     <span class="post-publication-date small">&#183; {{ article.publication_date }}</span>
                 </p>
                 <p class="post-content">
                     {{ article.content|slice:":280" }}...
                 </p>
-                <img class="img-fluid post-image" src="{{ article.cover_image.url }}">
+                <img class="img-fluid post-image rounded border border-light border-opacity-25 p-0" src="{{ article.cover_image.url }}">
             </div>
         {% endfor %}
 
