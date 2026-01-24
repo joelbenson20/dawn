@@ -16,9 +16,7 @@ def article(request, year, month, day, slug):
 
     date = datetime.date(int(year), int(month), int(day))
 
-    article = get_object_or_404(Article, publication_date=date)
-
-    if (article.slug != slug or article.published == False): raise Http404
+    article = get_object_or_404(Article, publication_date=date, slug=slug, published=True)
 
     context = {'article': article}
 

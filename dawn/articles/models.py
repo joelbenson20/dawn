@@ -6,7 +6,7 @@ from django.utils.text import slugify
 class Article(models.Model):
 
     title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200)
+    slug = models.SlugField(max_length=200, editable=False)
 
     author = models.CharField(max_length=200)
     author_url = models.URLField(blank=True)
@@ -21,12 +21,15 @@ class Article(models.Model):
     published = models.BooleanField(default=False)
     keywords = models.CharField(max_length=200)
 
-    class meta:
-        ordering = ['-publication_data']
     def __str__(self):
         return self.title
+
     def get_absolute_url(self):
         return reverse('article', args=[self.publication_date.year, self.publication_date.month, self.publication_date.day, self.slug])
-    @property
-    def slug(self):
-        return slugify(self.title)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Article, self).save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['-publication_date']
