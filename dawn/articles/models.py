@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from images.models import Image
 
 # Create your models here.
 class Article(models.Model):
@@ -19,8 +20,7 @@ class Article(models.Model):
     author_url = models.URLField(blank=True)
     author_email = models.EmailField(blank=True)
 
-    cover_image = models.ImageField(upload_to='images/', blank=True)
-    cover_image_credit = models.TextField(blank=True)
+    cover_image = models.ForeignKey(Image, on_delete=models.RESTRICT, blank=True, null=True)
 
     content = models.TextField()
 

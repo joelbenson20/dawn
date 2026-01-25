@@ -21,7 +21,7 @@
                     {{ article.snippet|safe }}
                 </p>
                 {% if article.cover_image %}
-                    <img class="img-fluid post-image rounded border border-light border-opacity-25 p-0" src="{{ article.cover_image.url }}">
+                    <img class="img-fluid post-image rounded border border-light border-opacity-25 p-0" src="{{ article.cover_image.image.url }}">
                 {% endif %}
             </div>
         {% endfor %}

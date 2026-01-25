@@ -22,8 +22,8 @@
         </div>
         <div class="col-md">
             {% if article.cover_image %}
-                <img class="img-fluid cover-image mb-3" src="{{ article.cover_image.url }}">
-                <p class="cover-image-credit">{{ article.cover_image_credit }}</p>
+                <img class="img-fluid cover-image mb-3" src="{{ article.cover_image.image.url }}">
+                <p class="cover-image-caption">{{ article.cover_image.caption|safe }}</p>
             {% endif %}
         </div>
 

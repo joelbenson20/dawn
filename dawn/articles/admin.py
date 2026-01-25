@@ -23,7 +23,7 @@ class ArticleAdmin(admin.ModelAdmin):
             'fields': ('author', 'author_email', 'author_url'),
         }),
         ('Cover Image', {
-            'fields': ('cover_image', 'cover_image_credit'),
+            'fields': ('cover_image',),
         }),
         ('Content', {
             'fields': ('content',),
