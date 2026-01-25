@@ -1,7 +1,9 @@
 #window-container {
-    background: black;
+    background: #040000;
     filter: contrast(88%);
     color: white;
+    min-height: 100dvh;
+    min-height: 100vh;
 }
 
 .navbar-brand,

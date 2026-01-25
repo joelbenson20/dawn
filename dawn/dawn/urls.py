@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('articles/', include('articles.urls')),
+    path('images/', include('images.urls')),
 ]
 
 #Serve static files during development

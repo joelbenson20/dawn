@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/image.css' %}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="row px-sm-5 py-5">
+        <div class="col-lg-8 mx-auto">
+            <img class="img-fluid image-image" src="{{ image.image.url }}">
+            <p class="image-caption py-3">{{ image.caption|safe }}</p>
+        </div>
+    </div>
+
+{% endblock %}
