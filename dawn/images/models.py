@@ -28,3 +28,7 @@ class Image(models.Model):
 
     class Meta:
         ordering = ['-upload_date', '-slug']
+
+    @property
+    def get_model(self):
+        return self.__class__.__name__

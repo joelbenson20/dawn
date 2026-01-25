@@ -20,10 +20,12 @@
                 <span class="publication-date">&#183; {{ article.publication_date }}</span>
             </p>
         </div>
-        <div class="col-md">
+        <div class="col-md d-flex align-items-center p-0">
             {% if article.cover_image %}
-                <img class="img-fluid cover-image mb-3" src="{{ article.cover_image.image.url }}">
-                <p class="cover-image-caption">{{ article.cover_image.caption|safe }}</p>
+                <div class="row p-0">
+                    <img class="img-fluid cover-image" src="{{ article.cover_image.image.url }}">
+                    <p class="cover-image-caption pt-2">{{ article.cover_image.caption|safe }}</p>
+                </div>
             {% endif %}
         </div>
 

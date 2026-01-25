@@ -27,6 +27,11 @@
     font-weight: 400;
 }
 
+.content-image-caption,
+.cover-image-caption {
+    font-size: 16px;
+}
+
 @media only screen and (max-width: 992px) {
     .section {
         font-size: 16px;

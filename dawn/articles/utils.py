@@ -1,7 +1,7 @@
 content_image_html = """
     <figure class="w-75 mx-auto my-5">
-        <img class="img-fluid article-content-image" src="%s">
-        <p class="article-content-image-caption small py-3">%s</p>
+        <img class="img-fluid content-image" src="%s">
+        <p class="content-image-caption  pt-2">%s</p>
     </figure>"""
 
 def embed_image(match_string, article):

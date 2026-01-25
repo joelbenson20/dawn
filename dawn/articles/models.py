@@ -44,6 +44,10 @@ class Article(models.Model):
         ordering = ['-publication_date']
 
     @property
+    def get_model(self):
+        return self.__class__.__name__
+
+    @property
     def rendered_content(self):
         content = self.content
         rendered_content = re.sub('{{\s*image_(.*)\s*}}', lambda match :embed_image(match, self), content)
