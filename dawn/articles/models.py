@@ -2,6 +2,8 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 from images.models import Image
+import re
+from .utils import embed_image
 
 # Create your models here.
 class Article(models.Model):
@@ -23,6 +25,7 @@ class Article(models.Model):
     cover_image = models.ForeignKey(Image, on_delete=models.RESTRICT, blank=True, null=True)
 
     content = models.TextField()
+    content_images = models.ManyToManyField(Image, related_name='articles', blank=True)
 
     publication_date = models.DateField()
     published = models.BooleanField(default=False)
@@ -39,3 +42,9 @@ class Article(models.Model):
 
     class Meta:
         ordering = ['-publication_date']
+
+    @property
+    def rendered_content(self):
+        content = self.content
+        rendered_content = re.sub('{{\s*image_(.*)\s*}}', lambda match :embed_image(match, self), content)
+        return rendered_content

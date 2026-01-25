@@ -26,11 +26,13 @@ class ArticleAdmin(admin.ModelAdmin):
             'fields': ('cover_image',),
         }),
         ('Content', {
-            'fields': ('content',),
+            'fields': ('content', 'content_images',),
         }),
         ('Publication', {
-            'fields': ('publication_date', 'published'),
+            'fields': ('publication_date', 'published',),
         })
     )
+
+    filter_horizontal = ('content_images',)
 
 admin.site.register(Article, ArticleAdmin)
