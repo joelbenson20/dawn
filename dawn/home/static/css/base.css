@@ -12,6 +12,10 @@
     font-family: goudy-old-style, garamond, "Times New Roman", serif;
 }
 
+.navbar-brand {
+    font-size: 3rem !important;
+}
+
 .hyper,
 .hyper:link,
 .hyper:visited {
