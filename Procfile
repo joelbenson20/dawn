@@ -1,1 +1,1 @@
-web: python dawn/manage.py migrate && python dawn/manage.py collectstatic --no-input && gunicorn dawn.wsgi
+web: python manage.py migrate && python manage.py collectstatic --no-input && gunicorn dawn.wsgi
