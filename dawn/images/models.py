@@ -20,10 +20,6 @@ class Image(models.Model):
         return self.slug
 
     def get_absolute_url(self):
-        print(self.publication_date)
-        print(self.publication_date.year)
-        print(self.publication_date.month)
-        print(self.publication_date.day)
         return reverse('image', args=[self.publication_date.year, self.publication_date.month, self.publication_date.day, self.slug])
 
     class Meta:

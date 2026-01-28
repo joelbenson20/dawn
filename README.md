@@ -1,4 +1,4 @@
-# dawn
+#dawn
 Django website to publish hyperfiction.
 
 Virtualenvwrapper environment for development site: "dawn_environment"
@@ -25,6 +25,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
 python3 manage.py createsuperuser
+python3 manage.py collectstatic
 
 Helpful PIP3 commands:
 pip3 freeze > requirements.txt
