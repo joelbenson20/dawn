@@ -2,7 +2,7 @@
 Django website to publish hyperfiction.
 
 Virtualenvwrapper environment for development site: "dawn_environment"
-to activate: "workon dawn_environment"
+to activate: "workon dawn_env"
 
 Helpful VIRTUALENVWRAPPER commands:
 deactivate -- exit out of the current python environment
