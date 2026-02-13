@@ -29,3 +29,6 @@ python3 manage.py collectstatic
 
 Helpful PIP3 commands:
 pip3 freeze > requirements.txt
+
+Helpful Railway commands:
+railway login --browserless
