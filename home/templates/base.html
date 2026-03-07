@@ -29,7 +29,9 @@
 
             <nav class="navbar navbar-dark navbar-expand-md p-3">
                 <div class="container-fluid">
-                    <a class="navbar-brand hyper" href="{% url 'index' %}">#Dawn</a>
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                        <img src="{% static 'images/brand.webp' %}" width="200">
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -38,9 +40,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'index' %}">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="{% url 'index' %}">Submissions</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
