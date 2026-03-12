@@ -92,7 +92,9 @@ DATABASES = {
     }
 }
 
-if 'DATABASE_URL' in os.environ:
+USE_POSTGRES = os.getenv('USE_POSTGRES', False)
+
+if 'DATABASE_URL' in os.environ and USE_POSTGRES=='True':
     DATABASES['default'] = dj_database_url.config(
         conn_max_age=500,
         conn_health_checks=True,
@@ -135,6 +137,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
 # Use Amazon S3 for media files
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
@@ -145,7 +148,6 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 PUBLIC_MEDIA_LOCATION = 'media'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-
 
 STORAGES = {
     "default": {
