@@ -2,8 +2,9 @@
     max-width: 576px;
 }
 
-.post-title {
-     font-family: goudy-old-style, garamond, "Times New Roman", serif;
+.post {
+    font-family: goudy-old-style, garamond, "Times New Roman", serif;
+    font-size: 18px;
 }
 
 .post-author-url {

@@ -36,6 +36,7 @@
                             <span class="post-publication-date small">&#183; {{ post.publication_date }}</span>
                         </p>
                         <a href="{{ post.get_absolute_url }}"><img class="img-fluid hyper" src="{{ post.image.url }}"></a>
+                        <p class="post-image-caption my-2">{{ post.caption|safe }}</p>
 
                     {% endif %}
                 </div>

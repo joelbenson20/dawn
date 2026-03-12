@@ -1,22 +1,15 @@
 #window-container {
-    background: #040000;
-    filter: contrast(88%);
+    /* filter: contrast(88%); */
     color: white;
     min-height: 100dvh;
     min-height: 100vh;
 }
-
-/* 
-.navbar-brand {
-     box-shadow: -2px 1px #ff00ff, 2px -2px #3cdfff;
-} */
 
 .hyper,
 .hyper:link,
 .hyper:visited {
     text-shadow: -1px 0px #ff00ff, 1px -1px #3cdfff;
     color: white;
-    /*text-decoration: none;*/
 }
 
 .hyper:hover {
