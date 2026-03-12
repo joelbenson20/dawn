@@ -12,6 +12,10 @@
     color: white;
 }
 
+.navbar-brand-image {
+    backdrop-filter: blur(15px);
+}
+
 .hyper:hover {
     text-decoration: underline;
 }

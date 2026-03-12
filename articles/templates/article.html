@@ -2,7 +2,17 @@
 {% load static %}
 
 {% block title %}
+{% endblock %}
+
+{% block meta %}
     <title>{{ article.title }}</title>
+    <meta property="og:title" content="{{ article.title }}">
+    <meta property="og:description" content="{{ article.snippet|striptags }}">
+    <meta property="og:keywords" content="{{ article.keywords }}">
+    <meta property="og:author" content="{{ article.author }}">
+    <meta property="og:url" content ="https://hashtagdawn.org{{ article.get_absolute_url }}">
+    <meta name="image" property="og:image" content="{{ article.cover_image.image.url }}">
+    <meta property="og:type" content="article">
 {% endblock %}
 
 {% block head %}
