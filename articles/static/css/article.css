@@ -3,7 +3,7 @@
     font-size: 7rem;
     float: left;
     margin-right: 15px;
-    text-shadow: 1px 1px #ff00ff, -1px -1px #3cdfff;
+    text-shadow: -2px 1px #ff00ff, 2px -2px #3cdfff;
 }
 
 .section,
@@ -25,6 +25,10 @@
 .content {
     font-size: 24px;
     font-weight: 400;
+}
+
+.content > p {
+    margin: 22px;
 }
 
 .content-image-caption,

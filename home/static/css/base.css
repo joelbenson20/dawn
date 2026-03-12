@@ -6,20 +6,15 @@
     min-height: 100vh;
 }
 
-.navbar-brand,
-.nav-item,
-.nav-link {
-    font-family: goudy-old-style, garamond, "Times New Roman", serif;
-}
-
+/* 
 .navbar-brand {
-    font-size: 3rem !important;
-}
+     box-shadow: -2px 1px #ff00ff, 2px -2px #3cdfff;
+} */
 
 .hyper,
 .hyper:link,
 .hyper:visited {
-    text-shadow: 1px 1px #ff00ff, -1px -1px #3cdfff;
+    text-shadow: -1px 0px #ff00ff, 1px -1px #3cdfff;
     color: white;
     /*text-decoration: none;*/
 }
@@ -29,7 +24,7 @@
 }
 
 .hyper:active {
-    text-shadow: -1px -1px #ff00ff, 1px 1px #3cdfff;
+    text-shadow: -2px -1px #ff00ff, 2px -2px #3cdfff;
     color:white;
 }
 

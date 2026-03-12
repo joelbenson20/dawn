@@ -2,6 +2,14 @@
     max-width: 576px;
 }
 
+.post-title {
+     font-family: goudy-old-style, garamond, "Times New Roman", serif;
+}
+
+.post-author-url {
+    text-decoration: none;
+}
+
 .post-content > * > .hyper {
     text-decoration: underline !important;
 }
