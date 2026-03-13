@@ -19,6 +19,7 @@
 
     {% block meta %}
         <title>Dawn | hypermedia</title>
+        <meta name="image" property="og:image" content="{% static 'images/DawnHypermediaBanner.png' %}">
     {% endblock %}
 
 </head>
@@ -30,7 +31,7 @@
         <nav class="navbar navbar-dark navbar-expand-md">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index' %}">
-                    <img class="navbar-brand-image" src="{% static 'images/dawn.png' %}" width="200">
+                    <img class="navbar-brand-image" src="{% static 'images/DawnHypermedia.png' %}" width="250">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarContent">
                     <span class="navbar-toggler-icon"></span>
