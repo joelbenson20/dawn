@@ -6,7 +6,6 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'author',
-        'author_email',
         'publication_date',
     )
 
@@ -20,7 +19,7 @@ class ArticleAdmin(admin.ModelAdmin):
             'fields': ('title', 'snippet', 'section', 'keywords',),
         }),
         ('Author Information', {
-            'fields': ('author', 'author_email', 'author_url'),
+            'fields': ('author', 'author_url'),
         }),
         ('Cover Image', {
             'fields': ('cover_image',),

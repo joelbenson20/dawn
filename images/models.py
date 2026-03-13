@@ -4,13 +4,14 @@ from django.urls import reverse
 class Image(models.Model):
 
     image = models.ImageField(upload_to='images/')
+    
+    title = models.CharField(max_length=280, default="Untitled")
     caption = models.TextField(blank=True, null=True)
     slug = models.CharField(max_length=280)
     keywords = models.CharField(max_length=280)
 
     author = models.CharField(max_length=280, blank=True, null=True)
     author_url = models.URLField(blank=True, null=True)
-    author_email = models.EmailField(blank=True, null=True)
 
     upload_date = models.DateTimeField(auto_now_add=True, editable=False)
     publication_date = models.DateField(blank=True, null=True)

@@ -7,7 +7,6 @@ class ImageAdmin(admin.ModelAdmin):
         'slug',
         'caption',
         'author',
-        'author_email',
         'upload_date'
     )
 
@@ -20,7 +19,7 @@ class ImageAdmin(admin.ModelAdmin):
             'fields': ('image', 'caption', 'slug', 'keywords',),
         }),
         ('Author Information', {
-            'fields': ('author', 'author_email', 'author_url'),
+            'fields': ('author', 'author_url'),
         }),
         ('Publication', {
             'fields': ('publication_date', 'published',),

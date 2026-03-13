@@ -20,7 +20,6 @@ class Article(models.Model):
 
     author = models.CharField(max_length=280)
     author_url = models.URLField(blank=True)
-    author_email = models.EmailField(blank=True)
 
     cover_image = models.ForeignKey(Image, on_delete=models.RESTRICT, blank=True, null=True)
 
