@@ -30,13 +30,10 @@
                     {% elif post.get_model == 'Image' %}
 
                         <p class="post-section">[ Image ]</p>
-                        <p>
-                            <span class="post-author fw-bolder">{{ post.author }}   </span>
-                            <a class="post-author-url hyper small" href="{{ post.author_url }}" target="_blank"><i class="fa-solid fa-link"></i> {{ post.author_url }}</a>
-                            <span class="post-publication-date small">&#183; {{ post.publication_date }}</span>
-                        </p>
+
                         <a href="{{ post.get_absolute_url }}"><img class="img-fluid hyper" src="{{ post.image.url }}"></a>
-                        <p class="post-image-caption my-2">{{ post.caption|safe }}</p>
+                        
+                        {% include 'modules/image-caption.html' with image=post %}
 
                     {% endif %}
                 </div>

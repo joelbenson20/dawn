@@ -1,0 +1,9 @@
+<p class="py-3"><em>{{ image.title}}</em>
+    {% if image.author_url %}
+        by <a class="hyper" href="{{ image.author_url }}" target="_blank">{{ image.author }}</a>
+    {% elif image.author %}
+        by {{ image.author}}
+    {% endif %}
+    , {{ image.publication_date }}
+    : {{ image.caption|safe }}
+</p>

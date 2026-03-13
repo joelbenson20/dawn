@@ -24,7 +24,9 @@
     <div class="row px-sm-5 py-5">
         <div class="col-lg-8 mx-auto">
             <img class="img-fluid image-image" src="{{ image.image.url }}">
-            <p class="image-caption py-3">{{ image.caption|safe }}</p>
+
+            {% include 'modules/image-caption.html' with image=image %}
+
         </div>
     </div>
 

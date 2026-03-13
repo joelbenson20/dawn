@@ -16,7 +16,7 @@ class ImageAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('image', 'caption', 'slug', 'keywords',),
+            'fields': ('image', 'title', 'caption', 'slug', 'keywords',),
         }),
         ('Author Information', {
             'fields': ('author', 'author_url'),
