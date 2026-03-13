@@ -4,6 +4,6 @@
     {% elif image.author %}
         by {{ image.author}}
     {% endif %}
-    , {{ image.publication_date }}
-    : {{ image.caption|safe }}
+    , {{ image.publication_date }}:
+    {{ image.caption|safe }}
 </p>
