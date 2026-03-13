@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['hashtagdawn.org', 'www.hashtagdawn.org', 'dawn-production-dade.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['dawnhyper.media', 'www.dawnhyper.media', 'dawn-production-dade.up.railway.app', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://dawnhyper.media', 'https://www.dawnhyper.media', 'https://dawn-production-dade.up.railway.app']
 
