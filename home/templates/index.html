@@ -9,11 +9,11 @@
     <div class="feed col mx-auto">
 
         {% for post in posts %}
-                <div class="post hyperglow row border border-3 border-white border-bottom-0 m-0 p-3">
+                <div class="post row border border-3 border-white hyper-border border-bottom-0 m-0 p-3">
 
                     {% if post.get_model == 'Article' %}
 
-                        <p class="post-section">[ {{ post.get_section_display }} ]</p>
+                        <p class="post-section hyper-medium">[ {{ post.get_section_display }} ]</p>
                         <h1><a class="post-title hyper" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
                         <p>
                             <span class="post-author fw-bolder">{{ post.author }}   </span>
@@ -29,7 +29,7 @@
 
                     {% elif post.get_model == 'Image' %}
 
-                        <p class="post-section">[ Image ]</p>
+                        <p class="post-section hyper-medium">[ Image ]</p>
 
                         <a href="{{ post.get_absolute_url }}"><img class="img-fluid hyper" src="{{ post.image.url }}"></a>
                         
