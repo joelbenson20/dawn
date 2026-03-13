@@ -9,7 +9,7 @@
     <div class="feed col mx-auto">
 
         {% for post in posts %}
-                <div class="post row border border-bottom-0 border-light border-opacity-25 px-sm-3 py-3">
+                <div class="post hyperglow row border border-5 border-white border-bottom-0 p-3">
 
                     {% if post.get_model == 'Article' %}
 
@@ -24,7 +24,7 @@
                             {{ post.snippet|safe }}
                         </p>
                         {% if post.cover_image %}
-                            <img class="img-fluid post-cover-image rounded border border-light border-opacity-25 p-0" src="{{ post.cover_image.image.url }}">
+                            <img class="img-fluid post-cover-image p-0" src="{{ post.cover_image.image.url }}">
                         {% endif %}
 
                     {% elif post.get_model == 'Image' %}

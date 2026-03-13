@@ -8,8 +8,14 @@
 .hyper,
 .hyper:link,
 .hyper:visited {
-    text-shadow: -1px 0px #ff00ff, 1px -1px #3cdfff;
+    text-shadow: -1px 0px #f0f, 1px -1px #0ff;
     color: white;
+}
+
+.hyperglow {
+      box-shadow:
+      0 0 20px 5px rgba(0, 255, 255, 0.2),
+      inset 0 0 20px 5px rgba(0, 255, 255, 0.2); 
 }
 
 .navbar-brand-image {
@@ -21,7 +27,7 @@
 }
 
 .hyper:active {
-    text-shadow: -2px -1px #ff00ff, 2px -2px #3cdfff;
+    text-shadow: -2px -1px #f0f, 2px -2px #0ff;
     color:white;
 }
 
