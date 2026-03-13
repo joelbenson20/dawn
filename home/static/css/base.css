@@ -23,12 +23,12 @@
 
 .hyper-border {
     box-shadow:
-    0 0 15px 5px rgba(0, 255, 255, 0.2),
-    inset 0 0 15px 5px rgba(0, 255, 255, 0.2); 
+    0 0 10px 3px rgba(0, 255, 255, 0.2),
+    inset 0 0 10px 3px rgba(0, 255, 255, 0.2); 
 }
 
 .hyper-medium {
-    text-shadow: 0 0 15px #0ff;
+    text-shadow: 0 0 5px #0ff;
 }
 
 .navbar {
