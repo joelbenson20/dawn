@@ -18,8 +18,13 @@
       inset 0 0 20px 5px rgba(0, 255, 255, 0.2); 
 }
 
-.navbar-brand-image {
-    backdrop-filter: blur(15px);
+.navbar {
+    mask: linear-gradient(black, black, transparent);
+    backdrop-filter: blur(100px);
+}
+
+.nav-link {
+    color: white !important;
 }
 
 .hyper:hover {
@@ -33,4 +38,10 @@
 
 h1 .hyper {
     text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        mask: none;
+    }
 }
