@@ -36,10 +36,11 @@
 </head>
 
 <body style="background-color: #000010;">
-    <div class="container-fluid p-0" id="window-container">
+    <div class="container-fluid p-0 m-0" id="window-container">
 
-        <nav class="navbar navbar-dark navbar-expand-md sticky-top pt-0">
-            <div class="container-fluid">
+
+        <nav class="navbar navbar-dark navbar-expand-md sticky-top m-0 p-0">
+            <div class="container-fluid m-0 p-0">
                 <a class="navbar-brand p-0" href="{% url 'index' %}">
                     <img class="navbar-brand-image" src="{% static 'images/DawnHypermedia.png' %}" width="200">
                 </a>
@@ -61,6 +62,18 @@
 
         {% block body %}
         {% endblock %}
+
+        <div class="generator sticky-bottom p-0 m-0">
+            <div class="blur-0 block"></div>
+            <div class="blur-1 block"></div>
+            <div class="blur-2 block"></div>
+            <div class="blur-3 block"></div>
+            <div class="blur-4 block"></div>
+            <div class="blur-5 block"></div>
+            <div class="blur-6 block"></div>
+            <div class="blur-7 block"></div>
+            <div class="blur-8 block"></div>
+        </div>
 
     </div>
 </body>
