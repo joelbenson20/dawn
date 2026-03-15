@@ -1,4 +1,4 @@
-<small class="py-2">
+<p><small class="py-2">
     <em>{{ image.title}}</em>
     {% if image.author_url %}
         by <a class="hyper" href="{{ image.author_url }}" target="_blank">{{ image.author }}</a>,
@@ -7,4 +7,4 @@
     {% endif %}
     <time datetime="{{ image.publication_date|date:'Y-m-d' }}">{{ image.publication_date }}</time>:
     {{ image.caption|safe }}
-</small>
+</small></p>
