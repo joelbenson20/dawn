@@ -4,10 +4,10 @@ from django.urls import reverse
 class Image(models.Model):
 
     image = models.ImageField(upload_to='images/')
+    slug = models.CharField(max_length=280, unique=True)
     
     title = models.CharField(max_length=280, default="Untitled")
     caption = models.TextField(blank=True, null=True)
-    slug = models.CharField(max_length=280)
     keywords = models.CharField(max_length=280)
 
     author = models.CharField(max_length=280, blank=True, null=True)

@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from images.models import Image
 import re
-from .utils import embed_image
+from .utils import hyper_render
 
 # Create your models here.
 class Article(models.Model):
@@ -49,5 +49,5 @@ class Article(models.Model):
     @property
     def rendered_content(self):
         content = self.content
-        rendered_content = re.sub('{{\s*image_(.*)\s*}}', lambda match :embed_image(match, self), content)
+        rendered_content = re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyper_render(match, self), content)
         return rendered_content
