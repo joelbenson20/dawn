@@ -10,6 +10,7 @@
     <meta name="author" content="{{ article.author }}">
     <meta name="description" content="{{ article.snippet|striptags }}">
     <meta name="keywords" content="{{ article.keywords }}">
+    <link rel="canonical" href="https://dawnhyper.media{{ article.get_absolute_url }}">
 
     <meta name="og:title" content="{{ article.title }}">
     <meta name="og:description" content="{{ article.snippet|striptags }}">
@@ -27,14 +28,14 @@
 {% endblock %}
 
 {% block body %}
-    <div class="row m-0 p-3">
+    <header class="row m-0 p-3">
 
         <div class="col-md text-center align-self-center m-3">
-            <p class="section hyper-medium">[ {{ article.get_section_display }} ]</p>
+            <p class="hyper-section">[ {{ article.get_section_display }} ]</p>
             <h1 class="title display-1">{{ article.title }}</h1>
             <p>
                 <a class="author hyper fw-bolder" href="{{ article.author_url }}" target="_blank"><i class="fa-solid fa-link small"></i> {{ article.author }}</a>
-                <span class="publication-date">&#183; {{ article.publication_date }}</span>
+                <time datetime="{{ article.publication_date|date:'Y-m-d' }}" class="publication-date">&#183; {{ article.publication_date }}</time>
             </p>
         </div>
         {% if article.cover_image %}
@@ -42,24 +43,23 @@
             {% if article.cover_image %}
                 <div class="row">
                     <img class="img-fluid cover-image" src="{{ article.cover_image.image.url }}">
-                    <p class="cover-image-caption">{{ article.cover_image.caption|safe }}</p>
+                    <small class="cover-image-caption">{{ article.cover_image.caption|safe }}</small>
                 </div>
             {% endif %}
         </div>
         {% endif %}
 
-    </div>
+    </header>
 
-   <div class="row p-0 m-0">
-       <div class="col-lg-2">
-       </div>
+   <main class="row p-0 m-0">
+       <div class="col-lg-2"></div>
+
        <div class="col-lg-7 content">
-           <p>{{ article.rendered_content|safe }}</p>
+           {{ article.rendered_content|safe }}
            <p class="text-end"><a class="hyper-fin hyper" href="#"><i class="fa-solid fa-circle"></i></a></p>
        </div>
-       <div class="col-lg-3">
 
-       </div>
-    </div>
+       <div class="col-lg-3"></div>
+    </main>
 
 {% endblock %}

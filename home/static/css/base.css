@@ -1,65 +1,21 @@
+:root {
+    --background-color: #000010;
+    --text-color: white;
+}
+
 #window-container {
-    color: white;
+    color: var(--text-color);
     font-family: goudy-old-style, garamond, "Times New Roman", serif;
-    min-height: 100dvh;
-    min-height: 100vh;
-}
-
-.hyper,
-.hyper:link,
-.hyper:visited {
-    text-shadow: -1px 0px #f0f, 1px -1px #0ff, 0 0 3px white;
-    color: white;
-}
-
-.hyper:hover {
-    text-decoration: underline;
-}
-
-.hyper:active {
-    text-shadow: -2px -1px #f0f, 2px -2px #0ff;
-    color:white;
-}
-
-.hyper-border {
-    box-shadow:
-    0 0 10px 3px rgba(0, 255, 255, 0.2),
-    inset 0 0 10px 3px rgba(0, 255, 255, 0.2); 
-}
-
-.hyper-medium {
-    text-shadow: 0 0 5px #0ff;
+    font-size: 18px;
 }
 
 .navbar {
     background-color: rgba(0, 0, 16, 0.66);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(var(--glow-radius));
 }
 
-.blur-8, .blur-7, .blur-6, .blur-5, .blur-4, .blur-3, .blur-2, .blur-1, .blur-0 {
-    height: 1.2vh;
-}
-
-/* 1, 3, 10, 25, 57, 127, 286, 641, 1440 => exponential
-160, 320, 480, 640, 800, 960, 1120, 1280, 1440 => linear */
-.blur-8 { backdrop-filter: blur(1440px); }
-.blur-7 { backdrop-filter: blur(1280px); }
-.blur-6 { backdrop-filter: blur(1120px); }
-.blur-5 { backdrop-filter: blur(480px); }
-.blur-4 { backdrop-filter: blur(160px); }
-.blur-3 { backdrop-filter: blur(25px); }
-.blur-2 { backdrop-filter: blur(17px); }
-.blur-1 { backdrop-filter: blur(2px); }
-.blur-0 { backdrop-filter: blur(1px); }
-
-.nav-link {
-    color: white !important;
-}
-
-h1 .hyper {
-    text-decoration: none;
-}
-
-@media only screen and (max-width: 768px) {
-   
+a,
+a:link,
+a:visited {
+    color: inherit;
 }

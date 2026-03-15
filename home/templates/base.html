@@ -7,8 +7,9 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hyperfx.css' %}">
     <link rel="stylesheet" href="{% static 'boot/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}">
@@ -22,6 +23,7 @@
         <title>Dawn Hypermedia</title>
         <meta name="description" content="A publisher of digital art.">
         <meta name="keywords" content="dawn, media, publisher, digital art, nonfiction, fiction, images, hypertext">
+        <link rel="canonical" href="https://dawnhyper.media">
 
         <meta name="og:title" content="Dawn Hypermedia">
         <meta name="og:type" content="website">
@@ -43,7 +45,6 @@
     <div class="container-fluid p-0 m-0" id="window-container">
 
         <nav class="navbar navbar-dark navbar-expand-md sticky-top m-0 p-0">
-            <div class="container-fluid m-0 p-0">
                 <a class="navbar-brand p-0" href="{% url 'index' %}">
                     <img class="navbar-brand-image" src="{% static 'images/DawnHypermedia.png' %}" width="200">
                 </a>
@@ -60,11 +61,10 @@
                         </li>
                     </ul>
                 </div>
-            </div>
         </nav>
 
-            {% block body %}
-            {% endblock %}
+        {% block body %}
+        {% endblock %}
 
         <div class="generator sticky-bottom p-0 m-0">
             <div class="blur-0 block"></div>

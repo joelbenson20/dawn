@@ -10,6 +10,7 @@
     <meta name="author" content="{{ image.author }}">
     <meta name="description" content="{{ image.caption|striptags }}">
     <meta name="keywords" content="{{ image.keywords }}">
+    <link rel="canonical" href="https://dawnhyper.media{{ image.get_absolute_url }}">
 
     <meta property="og:title" content="{{ image.title }}">
     <meta property="og:description" content="{{ image.caption|striptags }}">
@@ -25,11 +26,11 @@
 
 {% block body %}
 
-    <div class="row m-0">
+    <main class="row m-0">
         <col class="col-lg-2"></col>
         <div class="col-lg-7 mx-auto">
 
-            <p class="section hyper-medium">[ Image ]</p>
+            <p class="hyper-section">[ Image ]</p>
 
             <img class="img-fluid image-image" src="{{ image.image.url }}">
 
@@ -37,6 +38,6 @@
 
         </div>
         <div class="col-lg-3"></div>
-    </div>
+    </main>
 
 {% endblock %}

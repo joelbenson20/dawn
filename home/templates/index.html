@@ -6,38 +6,38 @@
 {% endblock %}
 
 {% block body %}
-    <div class="feed col mx-auto">
+    <main class="feed col mx-auto">
 
         {% for post in posts %}
-                <div class="post row border border-3 border-white hyper-border border-bottom-0 m-0 p-3">
+            <article class="post row border border-3 border-white border-glow border-bottom-0 m-0 p-3">
 
-                    {% if post.get_model == 'Article' %}
+                {% if post.get_model == 'Article' %}
 
-                        <p class="post-section hyper-medium">[ {{ post.get_section_display }} ]</p>
-                        <h1><a class="post-title hyper" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
-                        <p>
-                            <span class="post-author fw-bolder">{{ post.author }}   </span>
-                            <a class="post-author-url hyper small" href="{{ post.author_url }}" target="_blank"><i class="fa-solid fa-link"></i> {{ post.author_url }}</a>
-                            <span class="post-publication-date small">&#183; {{ post.publication_date }}</span>
-                        </p>
-                        <p class="post-content">
-                            {{ post.snippet|safe }}
-                        </p>
-                        {% if post.cover_image %}
-                            <img class="img-fluid post-cover-image p-0" src="{{ post.cover_image.image.url }}">
-                        {% endif %}
-
-                    {% elif post.get_model == 'Image' %}
-
-                        <p class="post-section hyper-medium">[ Image ]</p>
-
-                        <a href="{{ post.get_absolute_url }}"><img class="img-fluid hyper" src="{{ post.image.url }}"></a>
-                        
-                        {% include 'modules/image-caption.html' with image=post %}
-
+                    <p class="hyper-section">[ {{ post.get_section_display }} ]</p>
+                    <h1 class="display-2"><a class="post-title" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+                    <p>
+                        <span class="post-author fw-bolder">{{ post.author }}   </span>
+                        <a class="post-author-url hyper small" href="{{ post.author_url }}" target="_blank"><i class="fa-solid fa-link"></i> {{ post.author_url }}</a>
+                        <time datetime="{{ post.publication_date|date:'Y-m-d' }}" class="post-publication-date">&#183; {{ post.publication_date }}</time>
+                    </p>
+                    <p class="post-content">
+                        {{ post.snippet|safe }}
+                    </p>
+                    {% if post.cover_image %}
+                        <img class="img-fluid post-cover-image p-0" src="{{ post.cover_image.image.url }}">
                     {% endif %}
-                </div>
+
+                {% elif post.get_model == 'Image' %}
+
+                    <p class="hyper-section">[ Image ]</p>
+
+                    <a href="{{ post.get_absolute_url }}"><img class="img-fluid hyper" src="{{ post.image.url }}"></a>
+                    
+                    {% include 'modules/image-caption.html' with image=post %}
+
+                {% endif %}
+            </article>
         {% endfor %}
 
-    </div>
+    </main>
 {% endblock %}

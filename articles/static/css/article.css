@@ -1,37 +1,13 @@
 .drop-cap {
     line-height: 0.9;
-    font-size: 127px;
+    font-size: 121px;
     float: left;
     margin-right: 15px;
-    text-shadow: -2px 0px #ff00ff, 2px -2px #3cdfff, 0 0 6px white;
-
-}
-
-.article-header {
-    max-width: 100vw;
-}
-
-.author {
-    text-decoration: none;
-}
-
-.section {
-    font-size: 20px;
 }
 
 .content {
     max-width: 992px;
     font-size: 24px;
-    line-height: 1.6;
-}
-
-.content > p {
-    margin-bottom: 40px;
-}
-
-.content-image-caption,
-.cover-image-caption {
-    font-size: 16px;
 }
 
 .hyper-fin {
@@ -40,10 +16,7 @@
 
 @media only screen and (max-width: 992px) {
     .drop-cap{
-        font-size: 107px;
-    }
-    .section {
-        font-size: 16px;
+        font-size: 101px;
     }
     .content {
         font-size: 20px;
