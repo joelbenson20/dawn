@@ -5,17 +5,23 @@
 }
 
 .hyper,
-.drop-cap {
+.dropcap {
     text-shadow: -1px 0px var(--down-color), 1px -1px var(--dawn-color), 0 0 var(--glow-radius) white;
 }
 .hyper:active {
     text-shadow: -2px 0px var(--down-color), 2px -2px var(--dawn-color);
 }
 
-.border-glow {
+.border-glow, 
+hr {
+    border: 2px solid white !important;
     box-shadow:
     0 0 var(--glow-radius) 1px var(--dawn-color),
     inset 0 0 var(--glow-radius) 1px var(--dawn-color);
+}
+hr {
+    border: 1px solid white !important;
+    opacity: 1.0 !important;
 }
 
 .text-glow,

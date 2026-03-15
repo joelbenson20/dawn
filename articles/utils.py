@@ -22,10 +22,10 @@ def hyper_render(match_string, article):
             return
         
     elif (module == 'link'):
-        try:
-            url = data
-            return link_module % (url, text)
-        except:
-            return
+        url = data
+        return link_module % (url, text)
         
+    elif (module == 'dropcap'):
+        return '<span class="dropcap">%s</span>' % text
+
     return
