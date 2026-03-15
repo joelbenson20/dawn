@@ -14,13 +14,13 @@
                 {% if post.get_model == 'Article' %}
 
                     <p class="hyper-section">[ {{ post.get_section_display }} ]</p>
-                    <h1 class="display-2"><a class="post-title" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+                    <h1 class="display-1"><a class="post-title" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
                     
                     <p>
-                        <a class="post-author hyper" href="{{ post.author_url }}" target="_blank">{{ post.author }},<sup><i class="fa-solid fa-up-right-from-square"></i></sup></a>
+                        by <a class="post-author hyper" href="{{ post.author_url }}" target="_blank">{{ post.author }},<sup><i class="fa-solid fa-up-right-from-square"></i></sup></a>
                         <time datetime="{{ post.publication_date|date:'Y-m-d' }}" class="post-publication-date">{{ post.publication_date }}</time>
                     </p>
-                    <p class="post-snippet">
+                    <p class="post-snippet text-light fs-5">
                         {{ post.rendered_snippet|safe }}
                     </p>
                     {% if post.cover_image %}

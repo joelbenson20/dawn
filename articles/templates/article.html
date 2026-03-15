@@ -30,7 +30,7 @@
 {% block body %}
     <header class="row m-0 p-3">
 
-        <div class="col-md text-center align-self-center m-3">
+        <div class="col-md text-center align-self-center">
             <p class="hyper-section">[ {{ article.get_section_display }} ]</p>
             <h1 class="title display-1">{{ article.title }}</h1>
             <p>
@@ -51,12 +51,13 @@
 
     </header>
 
-   <main class="row p-0 m-0">
+   <main class="row m-0 p-3">
        <div class="col-lg-2"></div>
 
-       <div class="col-lg-7 content">
+       <div class="col-lg-7 content fs-4">
+            <hr>
            {{ article.rendered_content|safe }}
-           <p class="text-end"><a class="hyper-fin hyper" href="#"><i class="fa-solid fa-circle"></i></a></p>
+           <a class="hyper float-end fs-1" href="#"><i class="fa-solid fa-circle"></i></a>
        </div>
 
        <div class="col-lg-3"></div>

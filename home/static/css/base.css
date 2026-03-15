@@ -6,7 +6,6 @@
 #window-container {
     color: var(--text-color);
     font-family: goudy-old-style, garamond, "Times New Roman", serif;
-    font-size: 18px;
 }
 
 .navbar {
