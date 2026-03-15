@@ -5,8 +5,9 @@
 
 <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'boot/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}">
@@ -19,13 +20,16 @@
 
     {% block meta %}
         <title>Dawn Hypermedia</title>
-        <meta property="og:title" content="Dawn Hypermedia">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="{% static 'images/DawnHypermediaBanner.png' %}">
-        <meta property="og:url" content="https://dawnhyper.media">
-        <meta property="og:description" content="A publisher of digital art.">
-        <meta property="og:determiner" content="">
-        <meta property="og:site_name" content="Dawn Hypermedia">
+        <meta name="description" content="A publisher of digital art.">
+        <meta name="keywords" content="dawn, media, publisher, digital art, nonfiction, fiction, images, hypertext">
+
+        <meta name="og:title" content="Dawn Hypermedia">
+        <meta name="og:type" content="website">
+        <meta name="og:image" content="{% static 'images/DawnHypermediaBanner.png' %}">
+        <meta name="og:url" content="https://dawnhyper.media">
+        <meta name="description" content="A publisher of digital art.">
+        <meta name="og:determiner" content="">
+        <meta name="og:site_name" content="Dawn Hypermedia">
     {% endblock %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
@@ -59,8 +63,8 @@
             </div>
         </nav>
 
-        {% block body %}
-        {% endblock %}
+            {% block body %}
+            {% endblock %}
 
         <div class="generator sticky-bottom p-0 m-0">
             <div class="blur-0 block"></div>

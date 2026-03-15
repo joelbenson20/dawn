@@ -7,6 +7,10 @@
 
 {% block meta %}
     <title>{{ image.title }}</title>
+    <meta name="author" content="{{ image.author }}">
+    <meta name="description" content="{{ image.caption|striptags }}">
+    <meta name="keywords" content="{{ image.keywords }}">
+
     <meta property="og:title" content="{{ image.title }}">
     <meta property="og:description" content="{{ image.caption|striptags }}">
     <meta property="og:image" content="{{ image.image.url }}">
@@ -21,8 +25,9 @@
 
 {% block body %}
 
-    <div class="row px-sm-5 py-5">
-        <div class="col-lg-8 mx-auto">
+    <div class="row m-0">
+        <col class="col-lg-2"></col>
+        <div class="col-lg-7 mx-auto">
 
             <p class="section hyper-medium">[ Image ]</p>
 
@@ -31,6 +36,7 @@
             {% include 'modules/image-caption.html' with image=image %}
 
         </div>
+        <div class="col-lg-3"></div>
     </div>
 
 {% endblock %}
