@@ -15,13 +15,13 @@
 
                     <p class="hyper-section">[ {{ post.get_section_display }} ]</p>
                     <h1 class="display-2"><a class="post-title" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+                    
                     <p>
-                        <span class="post-author fw-bolder">{{ post.author }}   </span>
-                        <a class="post-author-url hyper small" href="{{ post.author_url }}" target="_blank"><i class="fa-solid fa-link"></i> {{ post.author_url }}</a>
-                        <time datetime="{{ post.publication_date|date:'Y-m-d' }}" class="post-publication-date">&#183; {{ post.publication_date }}</time>
+                        <a class="post-author hyper" href="{{ post.author_url }}" target="_blank">{{ post.author }},<sup><i class="fa-solid fa-up-right-from-square"></i></sup></a>
+                        <time datetime="{{ post.publication_date|date:'Y-m-d' }}" class="post-publication-date">{{ post.publication_date }}</time>
                     </p>
-                    <p class="post-content">
-                        {{ post.snippet|safe }}
+                    <p class="post-snippet">
+                        {{ post.rendered_snippet|safe }}
                     </p>
                     {% if post.cover_image %}
                         <img class="img-fluid post-cover-image p-0" src="{{ post.cover_image.image.url }}">

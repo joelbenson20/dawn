@@ -47,7 +47,9 @@ class Article(models.Model):
         return self.__class__.__name__
 
     @property
+    def rendered_snippet(self):
+        return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyper_render(match, self), self.snippet)
+    
+    @property
     def rendered_content(self):
-        content = self.content
-        rendered_content = re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyper_render(match, self), content)
-        return rendered_content
+        return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyper_render(match, self), self.content)

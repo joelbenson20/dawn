@@ -1,5 +1,7 @@
+import re
 from django.db import models
 from django.urls import reverse
+from articles.utils import hyper_render
 
 class Image(models.Model):
 
@@ -29,3 +31,7 @@ class Image(models.Model):
     @property
     def get_model(self):
         return self.__class__.__name__
+    
+    @property
+    def rendered_caption(self):
+        return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyper_render(match, self), self.caption)

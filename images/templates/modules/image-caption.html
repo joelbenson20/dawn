@@ -1,10 +1,10 @@
 <p><small class="py-2">
     <em>{{ image.title}}</em>
     {% if image.author_url %}
-        by <a class="hyper" href="{{ image.author_url }}" target="_blank">{{ image.author }}</a>,
+        by <a class="hyper" href="{{ image.author_url }}" target="_blank">{{ image.author }}<sup><i class="fa-solid fa-up-right-from-square"></i></sup></a>,
     {% elif image.author %}
         by {{ image.author}},
     {% endif %}
     <time datetime="{{ image.publication_date|date:'Y-m-d' }}">{{ image.publication_date }}</time>:
-    {{ image.caption|safe }}
+    {{ image.rendered_caption|safe }}
 </small></p>

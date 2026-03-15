@@ -8,12 +8,12 @@
     <title>{{ article.title }}</title>
     <meta name="title" content="{{ article.title }}">
     <meta name="author" content="{{ article.author }}">
-    <meta name="description" content="{{ article.snippet|striptags }}">
+    <meta name="description" content="{{ article.rendered_snippet|striptags }}">
     <meta name="keywords" content="{{ article.keywords }}">
     <link rel="canonical" href="https://dawnhyper.media{{ article.get_absolute_url }}">
 
     <meta name="og:title" content="{{ article.title }}">
-    <meta name="og:description" content="{{ article.snippet|striptags }}">
+    <meta name="og:description" content="{{ article.rendered_snippet|striptags }}">
     <meta name="og:image" content="{{ article.cover_image.image.url }}">
     <meta name="og:url" content ="https://dawnhyper.media{{ article.get_absolute_url }}">
     <meta name="og:site_name" content="Dawn Hypermedia">
@@ -34,8 +34,8 @@
             <p class="hyper-section">[ {{ article.get_section_display }} ]</p>
             <h1 class="title display-1">{{ article.title }}</h1>
             <p>
-                <a class="author hyper fw-bolder" href="{{ article.author_url }}" target="_blank"><i class="fa-solid fa-link small"></i> {{ article.author }}</a>
-                <time datetime="{{ article.publication_date|date:'Y-m-d' }}" class="publication-date">&#183; {{ article.publication_date }}</time>
+                <a class="author hyper" href="{{ article.author_url }}" target="_blank">{{ article.author }},<sup><i class="fa-solid fa-up-right-from-square"></i></sup></a>
+                <time datetime="{{ article.publication_date|date:'Y-m-d' }}" class="publication-date">{{ article.publication_date }}</time>
             </p>
         </div>
         {% if article.cover_image %}
