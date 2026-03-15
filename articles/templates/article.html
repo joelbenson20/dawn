@@ -34,7 +34,7 @@
             <p class="hyper-section">[ {{ article.get_section_display }} ]</p>
             <h1 class="title display-1">{{ article.title }}</h1>
             <p>
-                <a class="author hyper" href="{{ article.author_url }}" target="_blank">{{ article.author }},<sup><i class="fa-solid fa-up-right-from-square"></i></sup></a>
+                <a class="author hyper-link" href="{{ article.author_url }}" target="_blank">{{ article.author }},</a>
                 <time datetime="{{ article.publication_date|date:'Y-m-d' }}" class="publication-date">{{ article.publication_date }}</time>
             </p>
         </div>

@@ -1,6 +1,4 @@
-
-from articles.templates.modules.hyper import content_image_module, link_module
-import re
+from home.templates.modules.hyper import content_image_module, link_module
 
 def hyper_render(match_string, article):
 

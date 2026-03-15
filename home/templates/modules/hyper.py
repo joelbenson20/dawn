@@ -6,5 +6,5 @@ content_image_module = """
 """
 
 link_module = """
-    <a class="hyper" href="%s" target="_blank">%s<sup><i class="fa-solid fa-up-right-from-square"></i></sup></a>
+    <a class="hyper hyper-link" href="%s" target="_blank">%s</a>
 """

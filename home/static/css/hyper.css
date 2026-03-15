@@ -5,10 +5,12 @@
 }
 
 .hyper,
+.hyper-link,
 .dropcap {
     text-shadow: -1px 0px var(--down-color), 1px -1px var(--dawn-color), 0 0 var(--glow-radius) white;
 }
-.hyper:active {
+.hyper:active ,
+.hyper-link:active {
     text-shadow: -2px 0px var(--down-color), 2px -2px var(--dawn-color);
 }
 

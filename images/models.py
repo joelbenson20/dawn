@@ -1,7 +1,7 @@
 import re
 from django.db import models
 from django.urls import reverse
-from articles.utils import hyper_render
+from home.utils import hyper_render
 
 class Image(models.Model):
 

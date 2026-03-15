@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/hyperfx.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hyper.css' %}">
     <link rel="stylesheet" href="{% static 'boot/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/fontawesome.css' %}">
     <link rel="stylesheet" href="{% static 'fontawesome/css/solid.css' %}">
@@ -78,5 +78,8 @@
             <div class="blur-8 block"></div>
         </div>
 
+        <script src="{% static 'js/base.js' %}"></script>
+        {% block scripts %}
+        {% endblock %} 
     </div>
 </body>
