@@ -4,19 +4,43 @@
     --glow-radius: 5px;
 }
 
+#hyperWindow {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 16, 0.8);
+}
+
 .hyper,
 .hyper-link,
-.hyper-popup,
+.hyper-popup-link,
 .dropcap {
     text-shadow: -1px 0px var(--down-color), 1px -1px var(--dawn-color), 0 0 var(--glow-radius) white;
 }
+
 .hyper:active,
 .hyper-link:active,
-.hyper-popup:active {
+.hyper-popup-link:active {
     text-shadow: -2px 0px var(--down-color), 2px -2px var(--dawn-color);
 }
-.hyper-popup:hover {
+
+.hyper-popup-link:hover {
+    margin-left: auto;
     cursor:pointer
+}
+
+.hyper-popup {
+    max-width: 576px;
+    max-height: 576px;
+    backdrop-filter: blur(var(--glow-radius));
+}
+.hyper-exit-button:hover {
+    cursor: pointer;
 }
 
 .border-glow, 

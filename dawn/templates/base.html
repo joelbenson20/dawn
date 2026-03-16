@@ -42,7 +42,10 @@
 </head>
 
 <body style="background-color: #000010;">
-    <div class="container-fluid p-0 m-0" id="window-container">
+
+    <div id="window" class="container-fluid m-0 p-0">
+
+        <div id="hyperWindow" class="container-fluid justify-content-center align-items-center m-0 p-3" onclick="closeHyperWindow()"></div>
 
         <nav class="navbar navbar-dark navbar-expand-md sticky-top m-0 p-0">
                 <a class="navbar-brand p-0" href="{% url 'index' %}">
@@ -79,7 +82,8 @@
         </div>
 
         <script src="{% static 'js/base.js' %}"></script>
-        {% block scripts %}
-        {% endblock %} 
     </div>
+
+    {% block scripts %}
+    {% endblock %} 
 </body>

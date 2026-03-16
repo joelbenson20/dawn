@@ -1,7 +1,7 @@
 import re
 from django.db import models
 from django.urls import reverse
-from dawn.utils import render
+from dawn.utils import hyperrender
 
 class Image(models.Model):
 
@@ -34,4 +34,4 @@ class Image(models.Model):
     
     @property
     def rendered_caption(self):
-        return render(self.caption)
+        return hyperrender(self.caption)

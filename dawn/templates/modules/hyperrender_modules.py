@@ -10,5 +10,5 @@ hyper_link_module = """
 """
 
 hyper_popup_link_module = """
-    <span class="hyper-popup-link" onclick="showPopup(this)" data-popup-content="%s">%s</span>
+    <span class="hyper-popup-link" onclick="createHyperPopup(this)" data-hyper-popup-content="<p>%s</p>">%s</span>
 """

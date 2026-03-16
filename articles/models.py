@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from images.models import Image
 import re
-from dawn.utils import render
+from dawn.utils import hyperrender
 
 # Create your models here.
 class Article(models.Model):
@@ -48,8 +48,8 @@ class Article(models.Model):
 
     @property
     def rendered_snippet(self):
-        return render(self.snippet)
+        return hyperrender(self.snippet)
     
     @property
     def rendered_content(self):
-        return render(self.content)
+        return hyperrender(self.content)

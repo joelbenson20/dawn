@@ -1,10 +1,10 @@
-from dawn.templates.modules.render_modules import content_image_module, hyper_link_module, hyper_popup_link_module
+from dawn.templates.modules.hyperrender_modules import content_image_module, hyper_link_module, hyper_popup_link_module
 import re
 
-def render(content):
-    return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :render_element(match, content), content)
+def hyperrender(content):
+    return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyperrender_element(match, content), content)
 
-def render_element(match_string, article):
+def hyperrender_element(match_string, article):
 
     text = match_string.group(1)
     module = match_string.group(2)

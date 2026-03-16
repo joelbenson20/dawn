@@ -3,13 +3,14 @@
     --text-color: white;
 }
 
-#window-container {
+#window {
     color: var(--text-color);
     font-family: goudy-old-style, garamond, "Times New Roman", serif;
 }
 
 .navbar {
-    background-color: rgba(0, 0, 16, 0.66);
+    z-index: 1 !important;
+    background-color: rgba(0, 0, 16, 0.5);
     backdrop-filter: blur(var(--glow-radius));
 }
 
