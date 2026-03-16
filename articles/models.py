@@ -48,8 +48,8 @@ class Article(models.Model):
 
     @property
     def rendered_snippet(self):
-        return hyperrender(self.snippet)
+        return hyperrender(self.snippet, self)
     
     @property
     def rendered_content(self):
-        return hyperrender(self.content)
+        return hyperrender(self.content, self)

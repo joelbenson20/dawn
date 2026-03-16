@@ -20,9 +20,6 @@ function createHyperPopup(hyper_popup_link) {
     hyper_window.innerHTML = hyper_popup_modal;
     hyper_window.style.display = 'flex';
 };
-function hideHyperPopup(hyper_popup) {
-    hyper_window.style.display = 'none';
-}
 
 function closeHyperWindow() {
     hyper_window.innerHTML = '';
