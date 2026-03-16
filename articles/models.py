@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from images.models import Image
 import re
-from home.utils import hyper_render
+from dawn.utils import hyper_render
 
 # Create your models here.
 class Article(models.Model):
