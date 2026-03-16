@@ -1,7 +1,7 @@
 import re
 from django.db import models
 from django.urls import reverse
-from dawn.utils import hyper_render
+from dawn.utils import render
 
 class Image(models.Model):
 
@@ -34,4 +34,4 @@ class Image(models.Model):
     
     @property
     def rendered_caption(self):
-        return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyper_render(match, self), self.caption)
+        return render(self.caption)

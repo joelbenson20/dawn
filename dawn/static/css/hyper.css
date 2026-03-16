@@ -6,12 +6,17 @@
 
 .hyper,
 .hyper-link,
+.hyper-popup,
 .dropcap {
     text-shadow: -1px 0px var(--down-color), 1px -1px var(--dawn-color), 0 0 var(--glow-radius) white;
 }
-.hyper:active ,
-.hyper-link:active {
+.hyper:active,
+.hyper-link:active,
+.hyper-popup:active {
     text-shadow: -2px 0px var(--down-color), 2px -2px var(--dawn-color);
+}
+.hyper-popup:hover {
+    cursor:pointer
 }
 
 .border-glow, 

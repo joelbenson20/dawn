@@ -1,12 +1,14 @@
-from dawn.templates.modules.hyper_modules import content_image_module, link_module
+from dawn.templates.modules.render_modules import content_image_module, hyper_link_module, hyper_popup_link_module
+import re
 
-def hyper_render(match_string, article):
+def render(content):
+    return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :render_element(match, content), content)
+
+def render_element(match_string, article):
 
     text = match_string.group(1)
     module = match_string.group(2)
     data = match_string.group(3)
-
-    print(match_string[3])
 
     if (module == 'image'):
         try:
@@ -21,9 +23,13 @@ def hyper_render(match_string, article):
         
     elif (module == 'link'):
         url = data
-        return link_module % (url, text)
+        return hyper_link_module % (url, text)
+    
+    elif (module == 'popup'):
+        content = data
+        return hyper_popup_link_module % (content, text)
         
     elif (module == 'dropcap'):
         return '<span class="dropcap">%s</span>' % text
-
+    
     return

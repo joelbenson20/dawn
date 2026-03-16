@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from images.models import Image
 import re
-from dawn.utils import hyper_render
+from dawn.utils import render
 
 # Create your models here.
 class Article(models.Model):
@@ -48,8 +48,8 @@ class Article(models.Model):
 
     @property
     def rendered_snippet(self):
-        return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyper_render(match, self), self.snippet)
+        return render(self.snippet)
     
     @property
     def rendered_content(self):
-        return re.sub('\((.*?)\)\[(.*?):(.*?)\]', lambda match :hyper_render(match, self), self.content)
+        return render(self.content)
