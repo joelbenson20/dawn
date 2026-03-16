@@ -34,4 +34,4 @@ class Image(models.Model):
     
     @property
     def rendered_caption(self):
-        return hyperrender(self.caption)
+        return hyperrender(self.caption, self)

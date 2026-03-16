@@ -1,10 +1,10 @@
 from dawn.templates.modules.hyperrender_modules import content_image_module, hyper_link_module, hyper_popup_link_module
 import re
 
-def hyperrender(content, article=None):
-    return re.sub(r'\((.*?)\)\[(.*?):(.*?)\]', lambda match: hyperrender_element(match, article), content)
+def hyperrender(content, object=None):
+    return re.sub(r'\((.*?)\)\[(.*?):(.*?)\]', lambda match: hyperrender_element(match, object), content)
 
-def hyperrender_element(match_string, article):
+def hyperrender_element(match_string, object):
 
     text = match_string.group(1)
     module = match_string.group(2)
@@ -12,7 +12,7 @@ def hyperrender_element(match_string, article):
 
     if (module == 'image'):
         try:
-            content_image = article.content_images.get(slug=data)
+            content_image = object.content_images.get(slug=data)
 
             url = content_image.image.url
             caption = content_image.caption
