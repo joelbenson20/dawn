@@ -31,7 +31,7 @@
 
                     <p class="hyper-section">[ {{ post.get_type_display}} ]</p>
 
-                    <a href="{{ post.get_absolute_url }}"><img class="img-fluid hyper" src="{{ post.image.url }}"></a>
+                    <a href="{{ post.get_absolute_url }}"><img class="img-fluid hyper" src="{{ post.image.image.url }}"></a>
                     
                     {% include 'modules/image-caption.html' with image=post %}
 

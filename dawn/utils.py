@@ -13,13 +13,13 @@ def hyperrender_element(match_string, object):
     if (module == 'image'):
         try:
             content_image = object.content_images.get(slug=data)
-
             url = content_image.image.url
-            caption = content_image.caption
-
+            caption = content_image.description
+        
             return content_image_module % (url, caption)
         except:
-            return
+            print('Error rendering content image with slug "%s"' % data)
+            return          
         
     elif (module == 'link'):
         url = data

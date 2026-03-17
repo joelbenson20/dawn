@@ -43,7 +43,7 @@
             {% if article.cover_image %}
                 <div class="row">
                     <img class="img-fluid cover-image" src="{{ article.cover_image.image.url }}">
-                    <small class="cover-image-caption">{{ article.cover_image.rendered_caption|safe }}</small>
+                    <small class="cover-image-caption">{{ article.cover_image.description }}</small>
                 </div>
             {% endif %}
         </div>
