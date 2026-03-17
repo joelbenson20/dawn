@@ -1,7 +1,7 @@
 <p><small class="py-2">
     <em>{{ image.title}}</em>
     {% if image.author_url %}
-        by <a class="hyper-link" href="{{ image.author_url }}" target="_blank">{{ image.author_name }},</a>
+        by <a class="hyper-link" href="{{ image.author_url }}" target="_blank">{{ image.author_name }},<sup><i class="fa-solid fa-arrow-up-right-from-square"></i></sup></a>
     {% elif image.author_name %}
         by {{ image.author_name}},
     {% endif %}

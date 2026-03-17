@@ -1,4 +1,5 @@
 from django.db import models
+from .utils import hyperrender
 
 class Image(models.Model):
 
@@ -22,7 +23,11 @@ class Fragment(models.Model):
     modified_datetime = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.slug + ":" + self.content[:50]
+        return self.slug
+
+    @property
+    def rendered_content(self):
+        return hyperrender(self.content, self)
     
     class Meta:
         ordering = ['-modified_datetime']

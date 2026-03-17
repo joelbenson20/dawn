@@ -23,8 +23,8 @@ def hyperrender_element(match_string, object):
 
     elif (module == 'fragment'):
         try:
-            content_fragment = object.fragments.get(slug=data)
-            return hyper_modal_link_module % (content_fragment.slug, text)
+            fragment = object.fragments.get(slug=data)
+            return hyper_modal_link_module % (fragment.slug, text)
         except:
             print('Error rendering content fragment with slug "%s"' % data)
             return     

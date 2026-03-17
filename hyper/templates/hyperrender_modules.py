@@ -6,9 +6,9 @@ image_module = """
 """
 
 hyper_link_module = """
-    <a class="hyper-link" href="%s" target="_blank">%s</a>
+    <a class="hyper-link" href="%s" target="_blank">%s<sup><i class="fa-solid fa-arrow-up-right-from-square"></i></sup></a>
 """
 
 hyper_modal_link_module = """
-    <span class="hyper-modal-link" onclick="openHyper(this)" data-hyper-window-content="%s">%s</span>
+    <span class="hyper-modal-link" onclick="openHyperModal(this)" data-hyper-modal-content="%s">%s<sup><i class="fa-solid fa-clone"></i></sup></span>
 """

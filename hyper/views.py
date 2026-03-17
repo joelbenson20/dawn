@@ -9,7 +9,7 @@ def hyper(request, module, slug):
     if (module == "fragment"):
         try:
             fragment = Fragment.objects.get(slug=slug)
-            return HttpResponse(fragment.content)
+            return HttpResponse(fragment.rendered_content)
         except Fragment.DoesNotExist:
             raise Http404("Fragment not found")
 

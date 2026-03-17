@@ -1,18 +1,10 @@
-const hyper_links = document.querySelectorAll('a.hyper-link');
-const hyper_modal_links = document.querySelectorAll('.hyper-modal-link');
-const hyper_window = document.getElementById('hyperWindow');
+let z_index = 3;
 
-hyper_links.forEach((hyper_link, index) => {
-    hyper_link.innerHTML += `<sup><i class="fa-solid fa-up-right-from-square"></i></sup>`;
-});
-hyper_modal_links.forEach((hyper_modal_link, index) => {
-    hyper_modal_link.innerHTML += `<sup><i class="fa-solid fa-clone"></i></sup>`;
-});
+function openHyperModal(hyper_button) {
 
-function openHyper(hyper_button) {
-
+    const hyper_window = document.getElementById('hyperWindow');
     const module = 'fragment';
-    const slug = hyper_button.dataset.hyperWindowContent;
+    const slug = hyper_button.dataset.hyperModalContent;
     const url = `/hyper/${module}/${slug}/`;
 
     fetch(url)
@@ -22,21 +14,26 @@ function openHyper(hyper_button) {
         })
         .then(content => {
             const hyper_modal = `
-                <div class="hyper-modal col mx-auto my-auto align-center border-glow rounded p-3">
-                    <p class="hyper-exit-button text-glow float-end">&times;</p>
-                    <i class="fa-solid fa-clone text-left"></i>
-                    ${content}
+                <div class="hyper-modal-backdrop position-fixed top-0 start-0 w-100 h-100 d-flex" style="z-index: ${z_index};" onClick="closeHyperModal(this)">
+                    <div class="hyper-modal col mx-auto my-auto align-center border-glow rounded p-3" style="z-index: ${z_index++};" onClick="event.stopPropagation()">
+                        <p class="hyper-exit-button text-glow float-end" onClick="exitHyperModal(this)">&times;</p>
+                        <i class="fa-solid fa-clone text-left"></i>
+                        ${content}
+                    </div>
                 </div>
             `;
-            hyper_window.innerHTML = hyper_modal;
-            hyper_window.style.display = 'flex';
+            hyper_window.insertAdjacentHTML('beforeend', hyper_modal);
+            console.log(z_index);
         })
         .catch(err => console.error('Hyper fetch error:', err));
 };
 
-function closeHyperWindow() {
-    hyper_window.innerHTML = '';
-    hyper_window.style.display = 'none';
+function closeHyperModal(hyper_modal) {
+    console.log('closed!');
+    hyper_modal.remove();
 }
 
-console.log('Hello from hyper.js!');
+function exitHyperModal(exit_button) {
+    const hyper_modal = exit_button.closest('.hyper-modal-backdrop');
+    hyper_modal.remove();
+}
