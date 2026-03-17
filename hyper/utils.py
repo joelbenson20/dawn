@@ -1,4 +1,4 @@
-from hyper.templates.hyperrender_modules import image_module, hyper_link_module, hyper_popup_link_module
+from hyper.templates.hyperrender_modules import image_module, hyper_link_module, hyper_modal_link_module
 import re
 
 def hyperrender(content, object=None):
@@ -24,7 +24,7 @@ def hyperrender_element(match_string, object):
     elif (module == 'fragment'):
         try:
             content_fragment = object.fragments.get(slug=data)
-            return hyper_popup_link_module % (content_fragment.content, text)
+            return hyper_modal_link_module % (content_fragment.slug, text)
         except:
             print('Error rendering content fragment with slug "%s"' % data)
             return     

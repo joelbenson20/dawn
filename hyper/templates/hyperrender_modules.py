@@ -9,6 +9,6 @@ hyper_link_module = """
     <a class="hyper-link" href="%s" target="_blank">%s</a>
 """
 
-hyper_popup_link_module = """
-    <span class="hyper-popup-link" onclick="createHyperPopup(this)" data-hyper-popup-content="<p>%s</p>">%s</span>
+hyper_modal_link_module = """
+    <span class="hyper-modal-link" onclick="openHyper(this)" data-hyper-window-content="%s">%s</span>
 """

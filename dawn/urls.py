@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('objects.urls')),
     path('objects/', include('objects.urls')),
+    path('hyper/', include('hyper.urls')),
 ]
 
 

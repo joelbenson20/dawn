@@ -18,23 +18,23 @@
 
 .hyper,
 .hyper-link,
-.hyper-popup-link,
+.hyper-modal-link,
 .dropcap {
     text-shadow: -1px 0px var(--down-color), 1px -1px var(--dawn-color), 0 0 var(--glow-radius) white;
 }
 
 .hyper:active,
 .hyper-link:active,
-.hyper-popup-link:active {
+.hyper-modal-link:active {
     text-shadow: -2px 0px var(--down-color), 2px -2px var(--dawn-color);
 }
 
-.hyper-popup-link:hover {
+.hyper-modal-link:hover {
     margin-left: auto;
     cursor:pointer
 }
 
-.hyper-popup {
+.hyper-modal {
     max-width: 576px;
     max-height: 576px;
     backdrop-filter: blur(var(--glow-radius));
