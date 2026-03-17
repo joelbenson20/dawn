@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dawn',
     'objects.apps.ObjectsConfig',
+    'hyper.apps.HyperConfig',
     'storages'
 ]
 

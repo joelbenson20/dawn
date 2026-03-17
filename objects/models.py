@@ -3,9 +3,6 @@ from django.urls import reverse
 from django.utils.text import slugify
 from hyper.utils import hyperrender
 
-
-# Create your models here.
-
 class Image(models.Model):
 
     slug = models.SlugField(unique=True)
