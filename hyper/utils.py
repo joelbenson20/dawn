@@ -1,4 +1,4 @@
-from hyper.templates.hyperrender_modules import content_image_module, hyper_link_module, hyper_popup_link_module
+from hyper.templates.hyperrender_modules import image_module, hyper_link_module, hyper_popup_link_module
 import re
 
 def hyperrender(content, object=None):
@@ -12,22 +12,26 @@ def hyperrender_element(match_string, object):
 
     if (module == 'image'):
         try:
-            content_image = object.content_images.get(slug=data)
-            url = content_image.image.url
-            caption = content_image.description
+            image = object.images.get(slug=data)
+            url = image.image.url
+            caption = image.description
         
-            return content_image_module % (url, caption)
+            return image_module % (url, caption)
         except:
             print('Error rendering content image with slug "%s"' % data)
-            return          
+            return     
+
+    elif (module == 'fragment'):
+        try:
+            content_fragment = object.fragments.get(slug=data)
+            return hyper_popup_link_module % (content_fragment.content, text)
+        except:
+            print('Error rendering content fragment with slug "%s"' % data)
+            return     
         
     elif (module == 'link'):
         url = data
         return hyper_link_module % (url, text)
-    
-    elif (module == 'popup'):
-        content = data
-        return hyper_popup_link_module % (content, text)
         
     elif (module == 'dropcap'):
         return '<span class="dropcap">%s</span>' % text

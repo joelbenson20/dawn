@@ -1,0 +1,92 @@
+:root {
+    --dawn-color: #0ff;
+    --down-color: #f0f;
+    --glow-radius: 5px;
+}
+
+#hyperWindow {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 16, 0.8);
+}
+
+.hyper,
+.hyper-link,
+.hyper-popup-link,
+.dropcap {
+    text-shadow: -1px 0px var(--down-color), 1px -1px var(--dawn-color), 0 0 var(--glow-radius) white;
+}
+
+.hyper:active,
+.hyper-link:active,
+.hyper-popup-link:active {
+    text-shadow: -2px 0px var(--down-color), 2px -2px var(--dawn-color);
+}
+
+.hyper-popup-link:hover {
+    margin-left: auto;
+    cursor:pointer
+}
+
+.hyper-popup {
+    max-width: 576px;
+    max-height: 576px;
+    backdrop-filter: blur(var(--glow-radius));
+}
+.hyper-exit-button:hover {
+    cursor: pointer;
+}
+
+.border-glow, 
+hr {
+    border: 2px solid white !important;
+    box-shadow:
+    0 0 var(--glow-radius) 1px var(--dawn-color),
+    inset 0 0 var(--glow-radius) 1px var(--dawn-color);
+}
+hr {
+    border: 1px solid white !important;
+    opacity: 1.0 !important;
+}
+
+.text-glow,
+.hyper-section {
+    text-shadow: 0 0 var(--glow-radius) var(--dawn-color);
+}
+
+.hyper-section {
+    font-size: 20px;
+}
+
+.dropcap {
+    line-height: 0.9;
+    font-size: 96px;
+    float: left;
+    margin-right: 15px;
+}
+@media only screen and (max-width: 992px) {
+    .dropcap{
+        font-size: 88px;
+    }
+}
+
+.blur-8, .blur-7, .blur-6, .blur-5, .blur-4, .blur-3, .blur-2, .blur-1, .blur-0 {
+    height: 1.2vh;
+}
+/* 1, 3, 10, 25, 57, 127, 286, 641, 1440 => exponential
+160, 320, 480, 640, 800, 960, 1120, 1280, 1440 => linear */
+.blur-8 { backdrop-filter: blur(1440px); }
+.blur-7 { backdrop-filter: blur(1280px); }
+.blur-6 { backdrop-filter: blur(1120px); }
+.blur-5 { backdrop-filter: blur(480px); }
+.blur-4 { backdrop-filter: blur(160px); }
+.blur-3 { backdrop-filter: blur(25px); }
+.blur-2 { backdrop-filter: blur(17px); }
+.blur-1 { backdrop-filter: blur(2px); }
+.blur-0 { backdrop-filter: blur(1px); }
