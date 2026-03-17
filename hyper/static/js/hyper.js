@@ -15,7 +15,7 @@ function openHyperModal(hyper_button) {
         .then(content => {
             const hyper_modal = `
                 <div class="hyper-modal-backdrop position-fixed top-0 start-0 w-100 h-100 d-flex" style="z-index: ${z_index};" onClick="closeHyperModal(this)">
-                    <div class="hyper-modal col mx-auto my-auto align-center border-glow rounded p-3" style="z-index: ${z_index++};" onClick="event.stopPropagation()">
+                    <div class="hyper-modal col mx-auto my-auto border-glow rounded p-3" style="z-index: ${z_index++};" onClick="event.stopPropagation()">
                         <p class="hyper-exit-button text-glow float-end" onClick="exitHyperModal(this)">&times;</p>
                         <i class="fa-solid fa-clone text-left"></i>
                         ${content}
