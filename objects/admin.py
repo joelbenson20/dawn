@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import DawnArticle, DawnImage
+from .models import DawnArticle, DawnImage, Image
 
 class DawnArticleAdmin(admin.ModelAdmin):
 
@@ -22,14 +22,14 @@ class DawnArticleAdmin(admin.ModelAdmin):
             'fields': ('author_name', 'author_url'),
         }),
         ('Content', {
-            'fields': ('content',),
+            'fields': ('content', 'cover_image', 'content_images'),
         }),
         ('Publication', {
             'fields': ('publication_date', 'published',),
         })
     )
 
-admin.site.register(DawnArticle, DawnArticleAdmin)
+    filter_horizontal = ('content_images',)
 
 class DawnImageAdmin(admin.ModelAdmin):
 
@@ -59,4 +59,20 @@ class DawnImageAdmin(admin.ModelAdmin):
         })
     )
 
+class ImageAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'slug', 'description'
+    )
+
+    fieldsets = (
+        (None, {
+            'fields': ('slug', 'image', 'description')
+        }),
+    )
+
+
+
+admin.site.register(DawnArticle, DawnArticleAdmin)
 admin.site.register(DawnImage, DawnImageAdmin)
+admin.site.register(Image, ImageAdmin)

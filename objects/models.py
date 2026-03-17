@@ -1,11 +1,24 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-
 from dawn.utils import hyperrender
 
 
 # Create your models here.
+
+class Image(models.Model):
+
+    slug = models.SlugField(unique=True)
+    image = models.ImageField(upload_to='images/')
+    description = models.TextField(blank=True)
+    modified_datetime = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.slug
+    
+    class Meta:
+        ordering = ['-modified_datetime']
+
 class DawnObject(models.Model):
 
     type = models.CharField(choices=(
@@ -47,6 +60,8 @@ class DawnObject(models.Model):
 class DawnArticle(DawnObject):
 
     content = models.TextField()
+    cover_image = models.ForeignKey(Image, on_delete=models.SET_NULL, null=True, blank=True)
+    content_images = models.ManyToManyField(Image, related_name='dawn_articles', blank=True)
 
     @property
     def rendered_content(self):
@@ -54,4 +69,4 @@ class DawnArticle(DawnObject):
 
 class DawnImage(DawnObject):
 
-    image = models.ImageField(upload_to='objects/images/')
+    image = models.ForeignKey(Image, on_delete=models.CASCADE)
