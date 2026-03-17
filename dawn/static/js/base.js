@@ -13,7 +13,8 @@ function createHyperPopup(hyper_popup_link) {
     const hyper_popup_modal = `
         <div class="hyper-popup col mx-auto my-auto align-center border-glow rounded p-3">
             <p class="hyper-exit-button text-glow float-end">&times;</p>
-            <i class="fa-solid fa-clone text-left"></i>${hyper_popup_link.dataset.hyperPopupContent}
+            <i class="fa-solid fa-clone text-left"></i>
+            ${hyper_popup_link.dataset.hyperPopupContent}
         </div>
     `;
 

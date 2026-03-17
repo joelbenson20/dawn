@@ -23,8 +23,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('articles/', include('articles.urls')),
-    path('images/', include('images.urls')),
+    path('objects/', include('objects.urls')),
 ]
 
 

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'dawn',
     'articles.apps.ArticlesConfig',
     'images.apps.ImagesConfig',
+    'objects.apps.ObjectsConfig',
     'storages'
 ]
 
