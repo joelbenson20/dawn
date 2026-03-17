@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from dawn.utils import hyperrender
+from hyper.utils import hyperrender
 
 
 # Create your models here.
