@@ -1,5 +1,4 @@
 from hyper.templates.hyperrender_modules import image_module, hyper_link_module, hyper_frame_link_module
-from bs4 import BeautifulSoup
 import re
 
 def hyperrender(content, object=None):
