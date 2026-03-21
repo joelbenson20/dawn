@@ -17,14 +17,14 @@ class ImageAdmin(admin.ModelAdmin):
 class FragmentAdmin(admin.ModelAdmin):
     
     list_display = (
-        'slug',
+        'id',
         'content',
         'modified_datetime',
     )
 
     fieldsets = (
         (None, {
-            'fields': ('slug', 'content', 'fragments', 'images')
+            'fields': ('id', 'content', 'fragments', 'images')
         }),
     )
 

@@ -1,5 +1,5 @@
 from django.db import models
-from .utils import hyperrender
+from .render import hyperrender
 
 class Image(models.Model):
 
@@ -16,14 +16,13 @@ class Image(models.Model):
 
 class Fragment(models.Model):
 
-    slug = models.SlugField(unique=True)
     content = models.TextField()
     fragments = models.ManyToManyField('self', symmetrical=False, related_name='parent_fragments', blank=True)
     images = models.ManyToManyField(Image, related_name='fragments', blank=True)
     modified_datetime = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.slug
+        return str(self.id) + ": " + self.content[:50]
 
     @property
     def rendered_content(self):

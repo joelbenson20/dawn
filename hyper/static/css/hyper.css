@@ -4,30 +4,30 @@
     --glow-radius: 5px;
 }
 
-.hyper-modal-backdrop {
+.hyper-frame-backdrop {
     overflow: auto;
     background-color: rgba(0, 0, 16, 0.66);
 }
 
 .hyper,
 .hyper-link,
-.hyper-modal-link,
+.hyper-frame-link,
 .dropcap {
     text-shadow: -1px 0px var(--down-color), 1px -1px var(--dawn-color), 0 0 var(--glow-radius) white;
 }
 
 .hyper:active,
 .hyper-link:active,
-.hyper-modal-link:active {
+.hyper-frame-link:active {
     text-shadow: -2px 0px var(--down-color), 2px -2px var(--dawn-color);
 }
 
-.hyper-modal-link:hover {
+.hyper-frame-link:hover {
     margin-left: auto;
     cursor:pointer
 }
 
-.hyper-modal {
+.hyper-frame {
     max-width: 576px;
     max-height: 576px;
     backdrop-filter: blur(var(--glow-radius));

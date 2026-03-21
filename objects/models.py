@@ -1,8 +1,9 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from hyper.utils import hyperrender
+from hyper.render import hyperrender
 from hyper.models import Image, Fragment
+# from bs4 import BeautifulSoup
 
 class DawnObject(models.Model):
 
@@ -49,6 +50,32 @@ class DawnArticle(DawnObject):
     images = models.ManyToManyField(Image, related_name='dawn_articles', blank=True)
     cover_image = models.ForeignKey(Image, on_delete=models.SET_NULL, null=True, blank=True)
 
+    # def save(self, *args, **kwargs):
+        
+    #     self.createAndEmbedHyperframes()
+    #     super().save(*args, **kwargs)
+    
+    # def createAndEmbedHyperframes(self, *args, **kwargs):
+
+    #     soup = BeautifulSoup(self.content, 'html.parser')
+    #     hyper_frames_sorted = sorted(soup.find_all('hyper-frame'), key=lambda x: len(x.find_parents('hyper-frame')), reverse=True)
+        
+    #     for hyper_frame in hyper_frames_sorted:
+
+    #         #Only create Fragment if one has not already been created
+    #         if (not hyper_frame.has_attr('id')):
+
+    #             text = hyper_frame['text']
+    #             rendered_hyper_frame = soup.new_tag('span', string=text)
+    #             hyper_frame.replace_with(rendered_hyper_frame)
+                
+    #             Fragment.objects.create(content=text)
+                
+    #             rendered_hyper_frame['id'] = "new-id"
+                        
+    #     print(soup)
+    #     return
+    
     @property
     def rendered_content(self):
         return hyperrender(self.content, self)

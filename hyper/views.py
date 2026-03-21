@@ -2,13 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from hyper.models import Fragment
 
-def hyper(request, module, slug):
-
-    print(f"Module: {module}, Slug: {slug}")
+def hyper(request, module, id):
 
     if (module == "fragment"):
         try:
-            fragment = Fragment.objects.get(slug=slug)
+            fragment = Fragment.objects.get(id=id)
             return HttpResponse(fragment.rendered_content)
         except Fragment.DoesNotExist:
             raise Http404("Fragment not found")
