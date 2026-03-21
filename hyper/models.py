@@ -22,7 +22,7 @@ class Fragment(models.Model):
     modified_datetime = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.id) + ": " + self.content[:50]
+        return str(self.id) + ": " + self.content[:50] + '...'
 
     @property
     def rendered_content(self):

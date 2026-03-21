@@ -24,7 +24,7 @@ class FragmentAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('id', 'content', 'fragments', 'images')
+            'fields': ('content', 'fragments', 'images')
         }),
     )
 
