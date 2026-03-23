@@ -12,7 +12,7 @@
 .hyper,
 .hyper-link,
 .hyper-frame-link,
-.dropcap {
+.hyper-cap {
     text-shadow: -1px 0px var(--down-color), 1px -1px var(--dawn-color), 0 0 var(--glow-radius) white;
 }
 
@@ -57,14 +57,14 @@ hr {
     font-size: 20px;
 }
 
-.dropcap {
+.hyper-cap {
     line-height: 0.9;
     font-size: 96px;
     float: left;
     margin-right: 15px;
 }
 @media only screen and (max-width: 992px) {
-    .dropcap{
+    .hyper-cap{
         font-size: 88px;
     }
 }

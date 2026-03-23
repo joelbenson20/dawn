@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from hyper.render import hyperrender
+from hyper.render import hyperrender_content
 from hyper.models import Image, Fragment
 # from bs4 import BeautifulSoup
 
@@ -78,7 +78,7 @@ class DawnArticle(DawnObject):
     
     @property
     def rendered_content(self):
-        return hyperrender(self.content, self)
+        return hyperrender_content(self)
 
 class DawnImage(DawnObject):
 
